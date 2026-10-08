@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roster Kerja</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b2430;--mut:#6b7686;--bd:#dde2e9;--w:#2f7d5b;--l:#d98a1f;--ac:#2456c9;--bad:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181f;--card:#1d232d;--tx:#e8ecf2;--mut:#9aa5b5;--bd:#2f3744;--w:#4cb98a;--l:#e7a547;--ac:#6c92f0;--bad:#ff7b6b}}
+:root[data-theme="dark"]{--bg:#14181f;--card:#1d232d;--tx:#e8ecf2;--mut:#9aa5b5;--bd:#2f3744;--w:#4cb98a;--l:#e7a547;--ac:#6c92f0;--bad:#ff7b6b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px;max-width:900px;margin:auto}
+h1{font-size:20px;margin:4px 0}
+.sub{color:var(--mut);font-size:13px;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:end}
+label{display:flex;flex-direction:column;font-size:12px;color:var(--mut);gap:3px;flex:1;min-width:130px}
+input{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;width:100%}
+button{font:inherit;border:0;border-radius:8px;padding:9px 14px;background:var(--ac);color:#fff;cursor:pointer}
+button.g{background:transparent;color:var(--mut);border:1px solid var(--bd)}
+button.d{background:transparent;color:var(--bad);border:1px solid var(--bd)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.hd b{font-size:16px}
+.sc{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+th{color:var(--mut);font-weight:500;font-size:12px}
+td input{padding:5px;width:64px}
+.tw{color:var(--w);font-weight:600}.tl{color:var(--l);font-weight:600}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:6px 0 10px}
+.bar i{display:block;height:100%}
+.cm{background:var(--bg);border-radius:8px;padding:8px;margin:4px 0}.cm small{color:var(--mut)}.cm p{margin:2px 0;white-space:pre-wrap;word-break:break-word}.cm textarea{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px;width:100%;resize:vertical}.cb{padding:4px 9px;font-size:12px}.st{font-size:12px;color:var(--mut);margin-bottom:10px}
+.ft{text-align:center;color:var(--mut);font-size:12px;padding:10px 0 4px;letter-spacing:.3px}
+.cal-h{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.cal-h b{flex:1;min-width:120px;font-size:16px;text-transform:capitalize}.cal-h select{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.cg .dh{font-size:11px;color:var(--mut)}
+.cd{cursor:pointer;position:relative;padding:8px 0;border-radius:8px;background:var(--bg);border-bottom:3px solid transparent;font-size:13px}.cd.w{border-bottom-color:var(--w)}.cd.l{border-bottom-color:var(--l)}.cd.sun,.cd.h{color:var(--bad)}.cd.h{font-weight:700;background:color-mix(in srgb,var(--bad) 14%,var(--bg))}.cd.td{outline:2px solid var(--ac)}
+.cd.ev::after{content:"";position:absolute;top:4px;right:5px;width:5px;height:5px;border-radius:50%;background:var(--ac)}.cd.cb{color:var(--bad);background:color-mix(in srgb,var(--bad) 6%,var(--bg))}.cd.sel{background:var(--ac);color:#fff}.dt{background:var(--bg);border-radius:8px;padding:10px;margin-top:10px}.dt p{margin:4px 0}
+.lg{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin-top:8px}.lg i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.mn{margin:0 0 10px;border-bottom:1px solid var(--bd)}.mn button{background:none;color:var(--tx);border:0;border-radius:0;padding:8px 2px;font-size:14px;letter-spacing:.3px}.mn button[aria-expanded="true"]{color:var(--ac);font-weight:600}[hidden]{display:none!important}
+.note{font-size:12px;color:var(--mut);margin-top:6px}
+.warn{color:var(--bad)}
+</style>
+</head>
+<body>
+<h1>Roster Kerja</h1>
+<div class="sub">Hari kerja default <b>56</b> (bisa diubah per siklus, plus tambahan opsional) &middot; cuti maksimal <b>20 hari</b></div>
+
+<div class="card">
+  <div class="row">
+    <label>Nama karyawan<input id="nm" placeholder="mis. Budi"></label>
+    <label>Mulai kerja<input id="st" type="date"></label>
+    <label>Hari kerja<input id="wd" type="number" min="1" max="365" value="56"></label>
+    <label>Jumlah siklus<input id="cy" type="number" min="1" max="12" value="3"></label>
+    <button id="add">Tambah</button>
+  </div>
+</div>
+
+<div class="mn"><button id="calbtn" onclick="tgCal()" aria-expanded="false">Kalender <span id="car">&#9662;</span></button></div>
+<div class="card" id="cal" hidden></div>
+<div class="st" id="st2"></div>
+<div id="list"></div>
+
+<div class="ft">Created by : 61232744</div>
+
+<script>
+const MAXW=56, MAXL=20, DAY=86400000;
+let emps=[], comments=[], db=null, user=null, canW=true, names={}, myId=null, open={}, drafts={};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=t=>new Date(t).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'});
+const parse=s=>{const[y,m,d]=s.split('-').map(Number);return Date.UTC(y,m-1,d)};
+const iso=t=>new Date(t).toISOString().slice(0,10);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,Math.floor(Number(v)||0)));
+const $=id=>document.getElementById(id);
+$('st').value=iso(Date.now());
+
+function saveLocal(){try{localStorage.setItem('roster',JSON.stringify(emps))}catch(e){}}
+async function saveEmp(e){
+  if(db){try{await db.doc('emps/'+e.id).set({name:e.name,start:e.start,cycles:e.cycles})}catch(x){alert('Tidak bisa menyimpan roster (hanya editor yang boleh mengubah).')}}
+  else saveLocal();
+}
+$('add').onclick=()=>{
+  const name=$('nm').value.trim(), st=$('st').value, n=clamp($('cy').value,1,12), wd=clamp($('wd').value,1,365)||MAXW;
+  if(!name||!st){alert('Isi nama dan tanggal mulai.');return}
+  const e={id:'e'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),name,start:st,cycles:Array.from({length:n},()=>({work:wd,ext:0,leave:MAXL}))};
+  $('nm').value='';
+  if(!db){emps.push(e);render()}
+  saveEmp(e);
+};
+
+
+const HOL={"2026-01-01":"Tahun Baru Masehi","2026-01-16":"Isra Mikraj","2026-02-17":"Tahun Baru Imlek","2026-03-19":"Hari Raya Nyepi","2026-03-21":"Idul Fitri","2026-03-22":"Idul Fitri","2026-04-03":"Wafat Isa Almasih","2026-04-05":"Paskah","2026-05-01":"Hari Buruh","2026-05-14":"Kenaikan Isa Almasih","2026-05-27":"Idul Adha","2026-05-31":"Hari Raya Waisak","2026-06-01":"Hari Lahir Pancasila","2026-06-16":"Tahun Baru Islam","2026-08-17":"Hari Kemerdekaan RI","2026-08-25":"Maulid Nabi","2026-12-25":"Hari Raya Natal",
+"2027-01-01":"Tahun Baru Masehi","2027-01-05":"Isra Mikraj","2027-02-06":"Tahun Baru Imlek","2027-03-08":"Hari Suci Nyepi","2027-03-10":"Idul Fitri","2027-03-11":"Idul Fitri","2027-03-26":"Wafat Isa Almasih","2027-03-28":"Paskah","2027-05-01":"Hari Buruh","2027-05-06":"Kenaikan Isa Almasih","2027-05-17":"Idul Adha","2027-05-20":"Hari Raya Waisak","2027-06-01":"Hari Lahir Pancasila","2027-06-06":"Tahun Baru Islam","2027-08-15":"Maulid Nabi Muhammad SAW","2027-08-17":"Hari Kemerdekaan RI","2027-12-25":"Hari Raya Natal","2027-12-26":"Isra Mikraj"};
+const CB={"2026-02-16":"Imlek","2026-03-18":"Nyepi","2026-03-20":"Idul Fitri","2026-03-23":"Idul Fitri","2026-03-24":"Idul Fitri","2026-05-15":"Kenaikan Yesus Kristus","2026-05-28":"Idul Adha","2026-12-24":"Natal","2027-02-05":"Imlek","2027-03-09":"Idul Fitri","2027-03-12":"Idul Fitri","2027-03-15":"Idul Fitri","2027-03-25":"Wafat Yesus Kristus","2027-05-18":"Idul Adha","2027-05-19":"Waisak","2027-12-24":"Natal"};
+let cY=new Date().getFullYear(), cM=new Date().getMonth(), cE='';
+function ranges(e){let cur=parse(e.start);return e.cycles.map(c=>{const w=(c.work||MAXW)+c.ext,ws=cur,we=ws+(w-1)*DAY,ls=we+DAY,le=ls+(c.leave-1)*DAY;cur=le+DAY;return{ws,we,ls,le,l:c.leave}})}
+function cNav(d){if(d===0){const n=new Date();cY=n.getFullYear();cM=n.getMonth()}else{cM+=d;if(cM<0){cM=11;cY--}if(cM>11){cM=0;cY++}}renderCal()}
+const EV_UPDATED='8 Okt 2026';
+const EV=[
+{d:'2026-10-08',n:'Fast Run Series 1',c:'Malang, Jawa Timur',k:'5K'},
+{d:'2026-10-10',e:'2026-10-11',n:'Bayan Run',c:'Balikpapan, Kalimantan Timur',k:'5K/10K/21K'},
+{d:'2026-10-11',n:'UI Half Marathon',c:'Depok, Jawa Barat',k:'5K/10K/21K'},
+{d:'2026-10-11',n:'Jakarta 90s Run Festival',c:'Jakarta',k:'5K'},
+{d:'2026-10-11',n:'Victoria Run',c:'Jakarta',k:'5K/10K/21K'},
+{d:'2026-10-11',n:'910Nineten Race',c:'Tangerang, Banten',k:'5K/10K/21K'},
+{d:'2026-10-11',n:'IHGMA Run',c:'Surabaya, Jawa Timur',k:'5K/10K/21K'},
+{d:'2026-10-11',n:'KALLA 10K',c:'Makassar, Sulawesi Selatan',k:'5K/10K'},
+{d:'2026-10-11',n:'Aneka Jaya Run',c:'Semarang, Jawa Tengah',k:'5K/10K'},
+{d:'2026-10-11',n:'Kawah Wurung Ridge Run',c:'Bondowoso, Jawa Timur',k:'Trail 7K-60K'},
+{d:'2026-10-16',e:'2026-10-18',n:'ITB Ultra Marathon',c:'Bogor, Jawa Barat',k:'180K'},
+{d:'2026-10-17',e:'2026-10-18',n:'Biosferun',c:'Yogyakarta',k:'Trail 7K/15K/30K'},
+{d:'2026-10-18',n:'Alfamart Run',c:'Jakarta',k:'5K/10K'},
+{d:'2026-10-18',n:'Run for Changes',c:'Mojokerto, Jawa Timur',k:'5K/3K'},
+{d:'2026-10-18',n:'Siak Run',c:'Riau',k:'5K/10K'},
+{d:'2026-10-18',n:'Susurun',c:'Boyolali, Jawa Tengah',k:'5K/10K'},
+{d:'2026-10-22',e:'2026-10-25',n:'Jakarta Running Festival',c:'Jakarta',k:'5K/10K/21K/42K'},
+{d:'2026-10-25',n:'UM Run',c:'Malang, Jawa Timur',k:'5K/10K'},
+{d:'2026-10-25',n:'Bandung Heritage Run',c:'Bandung, Jawa Barat',k:'5K'},
+{d:'2026-10-25',n:'Bali Glass Fun Run',c:'Bali',k:'5K'},
+{d:'2026-11-01',n:'LT Men Power Run',c:'Surabaya, Jawa Timur',k:'5K/10K'},
+{d:'2026-11-01',n:'Self-Care AMRun 5K',c:'Denpasar, Bali',k:'5K'},
+{d:'2026-11-01',n:'Arutmin Borneo Run',c:'Banjarbaru, Kalimantan Selatan',k:'5K/10K/21K'},
+{d:'2026-11-01',n:'Bank Sumsel Babel Run',c:'Palembang, Sumatera Selatan',k:'5K'},
+{d:'2026-11-01',n:'PAPDI Banten Rush',c:'Tangerang, Banten',k:'5K'},
+{d:'2026-11-01',n:'Pharmaphoria Fun Run',c:'Tangerang, Banten',k:'5K'},
+{d:'2026-11-07',n:'Jungwok Sunset Run',c:'Yogyakarta',k:'5K'},
+{d:'2026-11-07',e:'2026-11-08',n:'Bromo Tengger Semeru Ultra Run',c:'Bromo, Jawa Timur',k:'Ultra trail'},
+{d:'2026-11-07',e:'2026-11-08',n:'Indofest Fun Trail Running',c:'Puncak Bogor, Jawa Barat',k:'Trail 6K-21K'},
+{d:'2026-11-08',n:'BayRun for Charity',c:'Jakarta (GBK)',k:'2K/5K/10K'},
+{d:'2026-11-08',n:'YO Run',c:'Bandung, Jawa Barat',k:'5K/10K'},
+{d:'2026-11-08',n:'Gembirunloka',c:'Yogyakarta',k:'Family run'},
+{d:'2026-11-08',n:'Sembada Run',c:'Yogyakarta',k:'3K/5K'},
+{d:'2026-11-08',n:'Wakatobi Biosphere Run',c:'Wakatobi, Sulawesi Tenggara',k:'5K+'},
+{d:'2026-11-13',n:'Jakarta Vertical Run',c:'Jakarta',k:'Vertical run'},
+{d:'2026-11-13',e:'2026-11-15',n:'Lari Lingkar Merapi',c:'Yogyakarta',k:'Trail 7K-125K'},
+{d:'2026-11-14',n:'Suroboyo Mlayu Bengi',c:'Surabaya, Jawa Timur',k:'5K'},
+{d:'2026-11-15',n:'Bank Jateng Borobudur Marathon',c:'Borobudur, Jawa Tengah',k:'Marathon'},
+{d:'2026-11-15',n:'Generun',c:'Yogyakarta',k:'5K/10K'},
+{d:'2026-11-15',n:'Guardian Run',c:'Jakarta',k:'5K/10K'},
+{d:'2026-11-21',n:'UB Trail Run',c:'Malang, Jawa Timur',k:'Trail'},
+{d:'2026-11-21',e:'2026-11-22',n:'Mandiri Bintan Marathon',c:'Lagoi, Kepulauan Riau',k:'Marathon'},
+{d:'2026-11-22',n:'Olymrun',c:'Makassar, Sulawesi Selatan',k:'5K/10K'},
+{d:'2026-11-29',n:'Prambanan Heritage Run',c:'Yogyakarta',k:'5K'},
+{d:'2026-11-29',n:'GEKRAFS Run',c:'Karawang, Jawa Barat',k:'Fun run'},
+{d:'2026-12-05',n:'Afterglow Run & Fest',c:'Jakarta',k:'5K'},
+{d:'2026-12-05',e:'2026-12-06',n:'NusantaRun',c:'Denpasar, Bali',k:'Charity 65K/95K'},
+{d:'2026-12-06',n:'BCA Citraland Marathon',c:'Surabaya, Jawa Timur',k:'Marathon'},
+{d:'2026-12-06',n:'Industropolis Run',c:'Batang, Jawa Tengah',k:'Road run'},
+{d:'2026-12-06',n:'Siak Half Marathon',c:'Siak, Riau',k:'5K/10K/21K'},
+{d:'2026-12-13',n:'Air Force Run',c:'Halim, Jakarta Timur',k:'5K/10K'},
+{d:'2026-12-20',n:'TMD Run',c:'Denpasar, Bali',k:'5K'}];
+let cSel=null;
+const evOn=t=>EV.filter(x=>t>=parse(x.d)&&t<=parse(x.e||x.d));
+const dlong=t=>new Date(t).toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+function selD(t){cSel=(cSel===t?null:t);renderCal()}
+function renderCal(){
+  const el=$('cal');
+  const e=emps.find(x=>x.id===cE)||emps[0];if(e)cE=e.id;
+  const rg=e?ranges(e):[];
+  const stOf=t=>{let st='';rg.forEach(r=>{if(t>=r.ws&&t<=r.we)st='w';else if(r.l>0&&t>=r.ls&&t<=r.le)st='l'});return st};
+  const first=Date.UTC(cY,cM,1),dim=new Date(Date.UTC(cY,cM+1,0)).getUTCDate(),off=(new Date(first).getUTCDay()+6)%7;
+  const n=new Date(),today=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate());
+  let cells='',hl=[],hw=0;
+  for(let i=0;i<off;i++)cells+='<div></div>';
+  for(let d=1;d<=dim;d++){
+    const t=Date.UTC(cY,cM,d),h=HOL[iso(t)],cb=CB[iso(t)],st=stOf(t);
+    if(h){hl.push(d+' &ndash; '+h);if(st==='w')hw++}else if(cb)hl.push(d+' &ndash; Cuti bersama '+cb)
+    cells+=`<div class="cd ${st} ${h?'h':''} ${cb?'cb':''} ${new Date(t).getUTCDay()===0?'sun':''} ${t===today?'td':''} ${evOn(t).length?'ev':''} ${t===cSel?'sel':''}" onclick="selD(${t})">${d}</div>`;
+  }
+  const title=new Date(first).toLocaleDateString('id-ID',{month:'long',year:'numeric',timeZone:'UTC'});
+  let det='';
+  if(cSel!==null){
+    const h=HOL[iso(cSel)],cb=CB[iso(cSel)],st=stOf(cSel),ev=evOn(cSel);
+    det=`<div class="dt"><b>${dlong(cSel)}</b>`+
+      (h?`<p class="warn">&#9632; Libur nasional: <b>${h}</b></p>`:'')+
+      (cb?`<p class="warn">&#9633; Cuti bersama: <b>${cb}</b></p>`:'')+
+      (e?`<p>${esc(e.name)}: ${st==='w'?'<span class="tw">masa kerja</span>':st==='l'?'<span class="tl">masa cuti</span>':'di luar roster'}</p>`:'')+
+      (ev.length?'<p>&#127939; Event lari:</p>'+ev.map(x=>`<p>&bull; <b>${x.n}</b> &ndash; ${x.c} (${x.k})</p>`).join(''):'')+
+      (!h&&!cb&&!ev.length&&!e?'<p>Tidak ada keterangan khusus.</p>':'')+`</div>`;
+  }
+  const mev=EV.filter(x=>{const t=parse(x.d);return t>=first&&t<Date.UTC(cY,cM+1,1)}).sort((a,b)=>a.d<b.d?-1:1);
+  el.innerHTML=`<div class="cal-h"><button class="g" onclick="cNav(-1)">&lsaquo;</button><b>${title}</b><button class="g" onclick="cNav(1)">&rsaquo;</button><button class="g" onclick="cNav(0)">Hari ini</button>
+    ${emps.length?`<select onchange="cE=this.value;renderCal()">${emps.map(x=>`<option value="${x.id}" ${x.id===cE?'selected':''}>${esc(x.name)}</option>`).join('')}</select>`:''}</div>
+    <div class="cg">${['Sen','Sel','Rab','Kam','Jum','Sab','Min'].map(x=>`<div class="dh">${x}</div>`).join('')}${cells}</div>
+    <div class="lg"><span><i style="background:var(--w)"></i>Kerja</span><span><i style="background:var(--l)"></i>Cuti</span><span class="warn">&#9632; Libur nasional &middot; &#9633; Cuti bersama</span><span><i style="background:var(--ac);height:6px;width:6px;border-radius:50%"></i>Event lari</span></div>
+    ${det||'<div class="note">Klik tanggal untuk melihat keterangan.</div>'}
+    <div class="note">${hl.length?'Libur bulan ini: '+hl.join(' &middot; ')+(e&&hw?` &middot; ${hw} hari libur jatuh di masa kerja ${esc(e.name)}`:''):'Tidak ada libur nasional bulan ini.'}</div>
+    <div class="note">Libur nasional dan cuti bersama 2026&ndash;2027 sesuai SKB 3 Menteri (2027 terbit 15 Sep 2026). Tanggal Idul Fitri/Idul Adha ditetapkan resmi oleh Menteri Agama.</div>
+    <div style="margin-top:12px"><b>&#127939; Event lari bulan ini</b>${mev.length?mev.map(x=>`<div class="note" style="margin:4px 0;color:var(--tx)">${new Date(parse(x.d)).getUTCDate()}${x.e?'&ndash;'+new Date(parse(x.e)).getUTCDate():''} &middot; <b>${x.n}</b> &ndash; ${x.c} (${x.k})</div>`).join(''):'<div class="note">Belum ada data event untuk bulan ini.</div>'}
+    <div class="note">Data event per ${EV_UPDATED} (rangkuman dari tias.co.id, lariku.info, kalenderlari.net, ahotu.com, indonesiamarathon.com). Daftar ini tidak update otomatis dan tanggal bisa berubah, cek penyelenggara sebelum mendaftar.</div></div>`;
+}
+function tgCal(){
+  const el=$('cal'),b=$('calbtn');el.hidden=!el.hidden;
+  b.setAttribute('aria-expanded',String(!el.hidden));
+  $('car').innerHTML=el.hidden?'&#9662;':'&#9652;';
+}
+function render(){
+  renderCal();
+  const box=$('list');
+  if(!emps.length){box.innerHTML='<div class="card note">Belum ada karyawan. Tambahkan di atas.</div>';return}
+  const cmap={};comments.forEach(c=>{(cmap[c.key]=cmap[c.key]||[]).push(c)});
+  box.innerHTML=emps.map((e,i)=>{
+    let cur=parse(e.start),rows='',bar='',totW=0,totL=0;
+    e.cycles.forEach((c,j)=>{
+      const w=(c.work||MAXW)+c.ext, ws=cur, we=ws+(w-1)*DAY, ls=we+DAY, le=ls+(c.leave-1)*DAY;
+      totW+=w;totL+=c.leave;
+      const key=e.id+'_'+j, list=cmap[key]||[], isOpen=open[key];
+      rows+=`<tr><td>${j+1}</td>
+        <td class="tw">${fmt(ws)} &ndash; ${fmt(we)}</td><td><input type="number" min="1" max="365" value="${c.work||MAXW}" onchange="upd(${i},${j},'work',this.value)"></td>
+        <td><input type="number" min="0" value="${c.ext}" onchange="upd(${i},${j},'ext',this.value)"></td>
+        <td class="tl">${fmt(ls)} &ndash; ${fmt(le)}</td>
+        <td><input type="number" min="0" max="${MAXL}" value="${c.leave}" onchange="upd(${i},${j},'leave',this.value)"></td>
+        <td><button class="g cb" onclick="tg('${key}')">&#128172; ${list.length}</button></td></tr>`;
+      if(isOpen){
+        rows+=`<tr><td colspan="7" style="white-space:normal"><div class="cm">`+
+          (list.map(c=>`<div><small><b>${esc(names[c.uid]||'Seseorang')}</b> &middot; ${new Date(c.ts).toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'})}</small>${c.uid&&c.uid===myId?` <button class="d cb" onclick="delC('${c.id}')">hapus</button>`:''}<p>${esc(c.text)}</p></div>`).join('')||'<small>Belum ada komentar.</small>')+
+          (db&&canW?`<textarea rows="2" id="d_${key}" placeholder="Tulis komentar..." oninput="drafts['${key}']=this.value">${esc(drafts[key]||'')}</textarea><button class="cb" style="margin-top:6px" onclick="send('${key}','${e.id}',${j})">Kirim</button>`:'<small>Masuk dengan akun yang punya akses untuk berkomentar.</small>')+
+          `</div></td></tr>`;
+      }
+      bar+=`<i style="background:var(--w);flex:${w}"></i><i style="background:var(--l);flex:${c.leave}"></i>`;
+      cur=le+DAY;
+    });
+    return `<div class="card">
+      <div class="hd"><b>${esc(e.name)}</b>
+        <span><button class="g" onclick="addC(${i})">+ Siklus</button> <button class="d" onclick="del(${i})">Hapus</button></span></div>
+      <div class="note">Total kerja ${totW} hari &middot; total cuti ${totL} hari</div>
+      <div class="bar">${bar}</div>
+      <div class="sc"><table>
+        <tr><th>#</th><th>Periode kerja</th><th>Hari kerja</th><th>+Tambah (0=tidak)</th><th>Periode cuti</th><th>Hari cuti (maks ${MAXL})</th><th>Komentar</th></tr>
+        ${rows}</table></div>
+      <div class="note"><span class="tw">Hijau</span> = kerja, <span class="tl">oranye</span> = cuti.</div>
+    </div>`}).join('');
+}
+function tg(k){open[k]=!open[k];render()}
+function upd(i,j,k,v){const c=emps[i].cycles[j];c[k]=k==='leave'?clamp(v,0,MAXL):k==='work'?clamp(v,1,365):clamp(v,0,365);render();saveEmp(emps[i])}
+function addC(i){const L=emps[i].cycles[emps[i].cycles.length-1];emps[i].cycles.push({work:(L&&L.work)||MAXW,ext:0,leave:MAXL});render();saveEmp(emps[i])}
+async function del(i){
+  const e=emps[i];if(!confirm('Hapus '+e.name+'?'))return;
+  if(db){try{await db.doc('emps/'+e.id).delete()}catch(x){alert('Tidak bisa menghapus.')}}
+  else{emps.splice(i,1);saveLocal();render()}
+}
+async function send(key,empId,j){
+  const t=(drafts[key]||'').trim();if(!t)return;
+  try{await db.collection('comments').add({key,empId,cycle:j,text:t.slice(0,1000),uid:myId,ts:Date.now()});delete drafts[key]}catch(x){alert('Komentar gagal dikirim. Akun Anda mungkin hanya punya akses lihat.')}
+  render();
+}
+async function delC(id){try{await db.doc('comments/'+id).delete()}catch(x){alert('Tidak bisa menghapus.')}}
+
+async function loadNames(ids){
+  if(!user)return;
+  const need=ids.filter(x=>x&&!(x in names));if(!need.length)return;
+  try{const ps=await user.profiles(need);need.forEach(id=>{names[id]=(ps[id]&&ps[id].name)||''})}catch(e){}
+}
+
+async function init(){
+  try{const s=localStorage.getItem('roster');if(s)emps=JSON.parse(s)}catch(e){}
+  render();
+  try{ if(window.claude){db=await claude.use('db');user=await claude.use('user')} }catch(e){db=null}
+  if(!db){$('st2').textContent='Mode lokal: data hanya tersimpan di perangkat ini, komentar online tidak aktif.';return}
+  emps=[];
+  if(user){try{myId=await user.id();const w=await user.can('data.write');canW=w!==false}catch(e){}}
+  $('st2').textContent='Online: roster dan komentar dibagikan ke semua yang membuka halaman ini.';
+  db.collection('emps').onSnapshot(s=>{emps=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>a.id<b.id?-1:1);render()},()=>{});
+  db.collection('comments').orderBy('ts','asc').limit(500).onSnapshot(async s=>{
+    comments=s.docs.map(d=>({id:d.id,...d.data()}));
+    await loadNames([...new Set(comments.map(c=>c.uid))]);render();
+  },()=>{});
+}
+init();
+</script>
+</body>
+</html>
